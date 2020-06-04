@@ -7,7 +7,7 @@ testApp.controller("testController", function($scope, $http) {
     //    Our GET request function
     $scope.getRequest = function() {
         console.log("I've been pressed!");
-        $http.get("http://ergast.com/api/f1/2005/last.json").then(
+        $http.get("https://ergast.com/api/f1/2005/last.json").then(
             function successCallback(result) {
                 $scope.seasonData = result.data;
                 $scope.season = result.data.MRData.RaceTable.season;
@@ -33,7 +33,7 @@ testApp.controller("testController", function($scope, $http) {
 
     };
     $scope.getDrivers = function(year) {
-        $http.get("http://ergast.com/api/f1/" + year + "/driverStandings.json").then(
+        $http.get("https://ergast.com/api/f1/" + year + "/driverStandings.json").then(
             function successCallback(result) {
                 $scope.year = year;
                 $scope.driversList = result.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
@@ -49,7 +49,7 @@ testApp.controller("testController", function($scope, $http) {
 
     };
     $scope.getConstructors = function(year) {
-        $http.get("http://ergast.com/api/f1/" + year + "/constructors.json").then(
+        $http.get("https://ergast.com/api/f1/" + year + "/constructors.json").then(
             function successCallback(result) {
                 $scope.year = year;
                 $scope.constructorsList = result.data.MRData.ConstructorTable.Constructors;
@@ -91,7 +91,7 @@ testApp.controller("testController", function($scope, $http) {
 
     //    Our POST request function
     $scope.postRequest = function() {
-        $http.post("http://urlforapi.com/", data).then(
+        $http.post("https://urlforapi.com/", data).then(
             function successCallback(response) {
                 console.log("Successfully POST-ed data");
             },
