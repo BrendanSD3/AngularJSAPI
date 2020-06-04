@@ -1,0 +1,44 @@
+<html ng-app="testApp">
+
+<head>
+    <title>AngularJS API Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="Script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="testController">
+    <h2>Recieving Formula 1 data from ergast API</h2>
+    {{ home }}
+    <button ng-click="getRequest()">Get info </button>
+    <button ng-click="getDrivers()">Get more info </button>
+    <table class="table table-hover table-bordered" ng-if="getDrivers='true'">
+
+        <thead>
+            <tr>
+                <th>Season</th>
+                <th>Round</th>
+                <th>Race Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Circuit</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ season }}</td>
+                <td>{{ round }}</td>
+                <td>{{ racename }}</td>
+                <td>{{ date }}</td>
+                <td>{{ time }}</td>
+                <td>{{ circuit }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

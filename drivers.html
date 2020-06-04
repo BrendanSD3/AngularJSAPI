@@ -1,0 +1,63 @@
+<html ng-app="testApp">
+
+<head>
+    <title>AngularJS API Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="Script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+</head>
+
+
+<body ng-controller="testController" data-ng-init="getDrivers(2019)" ng-init="switch=false; switch1=false;">
+    <div class="container">
+        <h2>Choose a season </h2>
+        <button ng-click="getDrivers(2019); change1(); switch=true; switch1=false;" class="btn btn-primary">Drivers Standings 2019 </button>
+        <button ng-click="getDrivers(2018);change(); switch=true; switch1=false;" class="btn btn-primary">Drivers Standings 2018 </button>
+        <br>
+        <br>
+        <button ng-click="getConstructors(1998);switch=false; switch1=true;" class="btn btn-primary">View Constructors for 1998 </button>
+    </div>
+    <div class="container" ng-hide="switch1" id="drivers">
+        <h2 id="season">Drivers Standings in Season: {{ year }}</h2>
+
+        <table class="table table-hover table-bordered">
+            <thead>
+                <th>Position</th>
+                <th>Full Name</th>
+                <th>Team </th>
+                <th>Points </th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="driver in driversList">
+                    <td>{{$index + 1}}</td>
+                    <td>{{driver.Driver.givenName}} &nbsp;{{driver.Driver.familyName}}</td>
+                    <td>{{ driver.Constructors[0].name}}</td>
+                    <td>{{ driver.points }}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container" ng-hide="switch" id="constructors">
+
+        <h2 id="season">Constructors in Season: {{ year }}</h2>
+
+        <table class="table table-hover table-bordered">
+            <thead>
+                <th>Constructor Name</th>
+                <th>Nationality</th>
+
+            </thead>
+            <tbody>
+                <tr ng-repeat="constructor in constructorsList">
+                    <td>{{ constructor.name }}</td>
+                    <td>{{ constructor.nationality}}</td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
