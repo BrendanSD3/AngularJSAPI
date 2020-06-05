@@ -15,7 +15,7 @@
         <h2>Choose a season </h2>
         <button ng-click="getDrivers(2019); change1(); switch=true; switch1=false;" class="btn btn-primary">Drivers Standings 2019 </button>
 
-        <select ng-model="selectedName" ng-options="x for x in years">
+        <select ng-model="selectedYear" ng-change="getDrivers(selectedYear)" ng-options="x for x in years">
         </select>
 
         <!--    <select ng-model="selectyear" ng-click="getDrivers(value)">
