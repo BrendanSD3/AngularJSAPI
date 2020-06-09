@@ -13,20 +13,21 @@
 <body ng-controller="testController" data-ng-init="getDrivers(2019)" ng-init="switch=false; switch1=false;">
     <div class="container">
         <h2>Choose a season </h2>
-        <button ng-click="getDrivers(2019); change1(); switch=true; switch1=false;" class="btn btn-primary">Drivers Standings 2019 </button>
+        <!--  <button ng-click="getDrivers(2019); change1(); switch=true; switch1=false;" class="btn btn-primary">Drivers Standings 2019 </button> -->
 
-        <select ng-model="selectedYear" ng-change="getDrivers(selectedYear); switch-true; switch1=false;" ng-options="x for x in years">
+        <select ng-model="selectedYear" ng-change="getDrivers(selectedYear); switch-true; switch1=false;" ng-options="x for x in years">Drivers Standings
         </select>
-
+        <select ng-model="selectedYear" ng-change="getConstructors(1998);switch=false; switch1=true;" ng-options="x for x in years">Constructors
+        </select>
         <!--    <select ng-model="selectyear" ng-click="getDrivers(value)">
             <option value="2019">Drivers Standings 2019</option>
             <option value="2018">Drivers Standings 2018</option>
             <option value="2017">Drivers Standings 2017</option>
         </select> -->
-        <button ng-click="getDrivers(2018);change(); switch=true; switch1=false;" class="btn btn-primary">Drivers Standings 2018 </button>
+        <!--      <button ng-click="getDrivers(2018);change(); switch=true; switch1=false;" class="btn btn-primary">Drivers Standings 2018 </button>
         <br>
         <br>
-        <button ng-click="getConstructors(1998);switch=false; switch1=true;" class="btn btn-primary">View Constructors for 1998 </button>
+        <button ng-click="getConstructors(1998);switch=false; switch1=true;" class="btn btn-primary">View Constructors for 1998 </button> -->
     </div>
     <div class="container" ng-hide="switch1" id="drivers">
         <h2 id="season">Drivers Standings in Season: {{ year }}</h2>
