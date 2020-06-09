@@ -17,7 +17,7 @@
 
         <select ng-model="selectedYear" ng-change="getDrivers(selectedYear); switch-true; switch1=false;" ng-options="x for x in years">Drivers Standings
         </select>
-        <select ng-model="selectedYear" ng-change="getConstructors(1998);switch=false; switch1=true;" ng-options="x for x in years">Constructors
+        <select ng-model="ConstselectedYear" ng-change="getConstructors(ConstselectedYear);switch=false; switch1=true;" ng-options="x for x in years">Constructors
         </select>
         <!--    <select ng-model="selectyear" ng-click="getDrivers(value)">
             <option value="2019">Drivers Standings 2019</option>
