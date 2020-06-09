@@ -46,7 +46,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="driver in driversList">
-                    <td>{{$index + 1}}</td>
+                    <td>{{ driver.position }}</td>
                     <td>{{driver.Driver.givenName}} &nbsp;{{driver.Driver.familyName}}</td>
                     <td>{{ driver.Constructors[0].name}}</td>
                     <td>{{ driver.points }}</td>
@@ -68,7 +68,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="constructor in constructorsList">
-                    <td>{{$index + 1}}</td>
+                    <td>{ constructor.position}</td>
                     <td>{{ constructor.name }}</td>
                     <td>{{ constructor.nationality}}</td>
                     <td>{{ constructor.points }}</td>
