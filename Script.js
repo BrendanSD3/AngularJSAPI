@@ -56,7 +56,7 @@ testApp.controller("testController", function($scope, $http) {
                 $scope.constructorsList = result.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
 
                 //$scope.driversList.dataLoaded = true;
-                console.log('getconstructors', $scope.constructorsList);
+                console.log('getconstructors', $scope.constructorsList.Constructor.name);
 
             },
             function errorCallback(response) {
