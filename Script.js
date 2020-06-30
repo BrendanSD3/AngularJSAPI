@@ -9,6 +9,7 @@ testApp.controller("testController", function($scope, $http) {
     $scope.displayImage = false;
 
     $scope.showImage = function(imageUrl) {
+        debugger;
         console.log(imageUrl);
         $scope.currentImageUrl = "images/mercedes.jpg";
         $scope.displayImage = true;
@@ -69,7 +70,7 @@ testApp.controller("testController", function($scope, $http) {
                 $scope.constructorsList = result.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
 
                 //$scope.driversList.dataLoaded = true;
-                console.log('getconstructors', $scope.constructorsList.Constructor.name);
+                console.log('getconstructors', $scope.constructorsList);
 
             },
             function errorCallback(response) {
