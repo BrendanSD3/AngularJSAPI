@@ -6,18 +6,9 @@ testApp.controller("testController", function($scope, $http) {
     $scope.constructorsList = [];
     $scope.years = [2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010];
 
-    $scope.displayImage = false;
 
-    $scope.showImage = function(imageUrl) {
-        debugger;
-        console.log(imageUrl);
-        $scope.currentImageUrl = "images/mercedes.jpg";
-        $scope.displayImage = true;
-    }
 
-    $scope.hideImage = function(imageUrl) {
-        $scope.displayImage = false;
-    }
+
 
     //    Our GET request function
     $scope.getRequest = function() {
