@@ -118,6 +118,7 @@
                 <th>Constructor Name</th>
                 <th>Nationality</th>
                 <th>Points</th>
+                <th>Image</th>
             </thead>
             <tbody>
                 <tr ng-repeat="constructor in constructorsList">
@@ -127,7 +128,7 @@
                     </td>
                     <td>{{ constructor.Constructor.nationality}}</td>
                     <td>{{ constructor.points }}</td>
-
+                    <td><img src="images/{{constructor.Constructor.name}}.jpg" /></td>
 
                 </tr>
             </tbody>
