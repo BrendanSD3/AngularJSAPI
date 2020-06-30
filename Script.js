@@ -9,6 +9,7 @@ testApp.controller("testController", function($scope, $http) {
     $scope.displayImage = false;
 
     $scope.showImage = function(imageUrl) {
+        console.log(imageUrl);
         $scope.currentImageUrl = "images/mercedes.jpg";
         $scope.displayImage = true;
     }
