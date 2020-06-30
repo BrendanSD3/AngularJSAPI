@@ -97,12 +97,12 @@
             <tbody>
                 <tr ng-repeat="constructor in constructorsList">
                     <td>{{ constructor.position }}</td>
-                    <td ng-click="showImage({{constructor.Constructor.constructorId}})" ng-mouseleave="hideImage()">{{ constructor.Constructor.name }}
+                    <td>{{ constructor.Constructor.name }}
 
                     </td>
                     <td>{{ constructor.Constructor.nationality}}</td>
                     <td>{{ constructor.points }}</td>
-                    <td><img src="images/{{constructor.Constructor.name}}.jpg" style="width:150px; height:200px;" /></td>
+                    <td><img src="images/{{constructor.Constructor.constructorId}}.jpg" style="width:150px; height:200px;" /></td>
 
                 </tr>
             </tbody>
