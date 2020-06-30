@@ -6,7 +6,34 @@
     <script src="Script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        // get the modal
+        var modal = document.getElementById("myModal");
 
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </head>
 
 
@@ -24,9 +51,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="https://brendansd3.github.io/react-tutorial/">React</a>
             </li>
-            <!--  <li class="nav-item">
-                <a class="nav-link" href="">Angular JS API calls</a>
-            </li> -->
+            <li class="nav-item">
+                <a class="active nav-link" href="">Angular JS API calls</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Python (Coming Soon!) </a>
             </li>
@@ -95,7 +122,7 @@
             <tbody>
                 <tr ng-repeat="constructor in constructorsList">
                     <td>{{ constructor.position }}</td>
-                    <td>{{ constructor.Constructor.name }}</td>
+                    <td ng-mouseover="showImage(item.image)" ng-mouseleave="hideImage()">{{ constructor.Constructor.name }}</td>
                     <td>{{ constructor.Constructor.nationality}}</td>
                     <td>{{ constructor.points }}</td>
 
@@ -104,4 +131,5 @@
             </tbody>
         </table>
     </div>
+    <div ng-if="displayImage" class="somePositionStyle"><img ng-src="{{currentImageUrl}}" /></div>
 </body>
