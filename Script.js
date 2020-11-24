@@ -7,18 +7,7 @@ testApp.controller("testController", function($scope, $http) {
     $scope.years = [2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010];
 
 
-    //GITHUB API Testing
-    $scope.Getsomedata = function() {
-        console.log("I've been pressed!");
-        $http.get("BrendanSD3:8717ba58fec09f6078a210018f730e647cc9b9b4https://api.github.com/users/BrendanSD3/repos").then(
-            function successCallback(result) {
-               console.log("Isthere a result? --> " + result);
-            },
-            function errorCallback(response) {
-                console.log("Unable to perform get request");
-            }
-        );
-    };
+   
 
 
     //    Our GET request function
