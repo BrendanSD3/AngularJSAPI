@@ -70,16 +70,18 @@
     <div class="container">
         <h2>Choose a season </h2>
         <!--  <button ng-click="getDrivers(2019); change1(); switch=true; switch1=false;" class="btn btn-primary">Drivers Standings 2019 </button> -->
-
+        <div style="float:left;">
         <label for="Driver">Driver Standings </label>
         <select id="Driver" ng-model="selectedYear" ng-change="getDrivers(selectedYear); switch=true; switch1=false;" ng-options="x for x in years">
             <option value="" disabled> Choose a Season </option>
         </select>
-        <br>
+         </div>
+        <div style="float:right;">
         <label for="Constructor">Constructor information </label>
         <select ng-model="ConstselectedYear" ng-change="getConstructors(ConstselectedYear);switch=false; switch1=true;" ng-options="x for x in years">
             <option value="" disabled> Choose a Season </option>        
         </select>
+        </div>
      </div>
    <div class="row">
     <div class="col">   
@@ -108,7 +110,7 @@
     <div class="col">
     <div class="container" id="constructors">
 
-        <h2 id="season">Constructors in Season: {{ year }}</h2>
+        <h2 id="season">Constructors in Season: {{ Constyear }}</h2>
 
         <table class="table table-hover table-bordered">
             <thead>
