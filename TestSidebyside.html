@@ -7,7 +7,41 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-
+<style>
+    .row {
+        margin-left:-5px;
+        margin-right:-5px;
+      }
+        
+      .column {
+        float: left;
+        width: 50%;
+        padding: 5px;
+      }
+      
+      /* Clearfix (clear floats) */
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 16px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+</style>
 </head>
 
 
@@ -56,6 +90,8 @@
         <br>
         <button ng-click="getConstructors(1998);switch=false; switch1=true;" class="btn btn-primary">View Constructors for 1998 </button> -->
     </div>
+   <div class="row">
+    <div class="col">   
     <div class="container" ng-hide="switch1" id="drivers">
         <h2 id="season">Drivers Standings in Season: {{ year }}</h2>
 
@@ -77,6 +113,8 @@
             </tbody>
         </table>
     </div>
+    </div>
+    <div class="row">
     <div class="container" ng-hide="switch" id="constructors">
 
         <h2 id="season">Constructors in Season: {{ year }}</h2>
@@ -102,6 +140,8 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    </div>
     </div>
 
 </body>
