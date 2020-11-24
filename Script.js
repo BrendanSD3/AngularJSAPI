@@ -13,7 +13,7 @@ testApp.controller("testController", function($scope, $http) {
     //    Our GET request function
     $scope.getRequest = function() {
         console.log("I've been pressed!");
-        $http.get("https://ergast.com/api/f1/2005/last.json").then(
+        $http.get("https://ergast.com/api/f1/current.json").then(
             function successCallback(result) {
                 $scope.seasonData = result.data;
                 $scope.season = result.data.MRData.RaceTable.season;
@@ -22,6 +22,7 @@ testApp.controller("testController", function($scope, $http) {
                 $scope.date = result.data.MRData.RaceTable.Races[0].date;
                 $scope.time = result.data.MRData.RaceTable.Races[0].time;
                 $scope.circuit = result.data.MRData.RaceTable.Races[0].Circuit.circuitName;
+                $scope.locality = result.data.MRData.RaceTable.Races[0].locality;
                 //console.log("Racename" + $scope.circuit)
                 //console.log("Response" + result.data.MRData.RaceTable.season);
             },
@@ -57,7 +58,7 @@ testApp.controller("testController", function($scope, $http) {
     $scope.getConstructors = function(year) {
         $http.get("https://ergast.com/api/f1/" + year + "/constructorStandings.json").then(
             function successCallback(result) {
-                $scope.year = year;
+                $scope.Constyear = year;
                 $scope.constructorsList = result.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
 
                 //$scope.driversList.dataLoaded = true;

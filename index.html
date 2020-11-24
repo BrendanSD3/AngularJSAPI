@@ -11,7 +11,7 @@
     <h2>Recieving Formula 1 data from ergast API</h2>
     {{ home }}
     <button ng-click="getRequest()">Get info </button>
-    <button ng-click="getDrivers()">Get more info </button>
+    <button ng-click="getDrivers(2020)">Get more info </button>
     <table class="table table-hover table-bordered" ng-if="getDrivers='true'">
 
         <thead>
@@ -22,6 +22,7 @@
                 <th>Date</th>
                 <th>Time</th>
                 <th>Circuit</th>
+                <th>Locality</th>
 
             </tr>
         </thead>
@@ -33,6 +34,7 @@
                 <td>{{ date }}</td>
                 <td>{{ time }}</td>
                 <td>{{ circuit }}</td>
+                <td>{{ locality }}</td>
 
             </tr>
         </tbody>
