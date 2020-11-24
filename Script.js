@@ -57,7 +57,7 @@ testApp.controller("testController", function($scope, $http) {
     $scope.getConstructors = function(year) {
         $http.get("https://ergast.com/api/f1/" + year + "/constructorStandings.json").then(
             function successCallback(result) {
-                $scope.year = year;
+                $scope.Constyear = year;
                 $scope.constructorsList = result.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
 
                 //$scope.driversList.dataLoaded = true;
