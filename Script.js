@@ -45,7 +45,7 @@ testApp.controller("testController", function($scope, $http) {
             function successCallback(result) {
                 $scope.year = year;
                 $scope.driversList = result.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
-                $scope.LeadDriver=result.data.MRData.StandingsTable.StandingsLists[0].DriversStandings[0].Driver.Driverid;
+                $scope.LeadDriver=result.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.Driverid;
                 
                 //$scope.driversList.dataLoaded = true;
                 console.log('getDrivers', $scope.driversList);
