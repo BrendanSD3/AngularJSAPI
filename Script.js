@@ -5,7 +5,8 @@ testApp.controller("testController", function($scope, $http) {
     $scope.driversList = [];
     $scope.constructorsList = [];
     $scope.years = [2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010];
-
+    $scope.leaders="";
+    $scope.LeadDriver="";
 
    
 
@@ -44,6 +45,8 @@ testApp.controller("testController", function($scope, $http) {
             function successCallback(result) {
                 $scope.year = year;
                 $scope.driversList = result.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+                $scope.LeadDriver=result.data.MRData.StandingsTable.StandingsLists[0].DriversStandings[0].Driver.Driverid;
+                
                 //$scope.driversList.dataLoaded = true;
                 console.log('getDrivers', $scope.driversList);
 
@@ -60,7 +63,7 @@ testApp.controller("testController", function($scope, $http) {
             function successCallback(result) {
                 $scope.Constyear = year;
                 $scope.constructorsList = result.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
-
+                $scope.leaders= result.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0].Constructor.constructorId;
                 //$scope.driversList.dataLoaded = true;
                 console.log('getconstructors', $scope.constructorsList);
 
