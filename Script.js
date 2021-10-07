@@ -4,7 +4,7 @@ testApp.controller("testController", function($scope, $http) {
     $scope.home = "This is the homepage";
     $scope.driversList = [];
     $scope.constructorsList = [];
-    $scope.years = [2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010];
+    $scope.years = [2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010];
 
 
    
@@ -99,14 +99,5 @@ testApp.controller("testController", function($scope, $http) {
      }; */
 
     //    Our POST request function
-    $scope.postRequest = function() {
-        $http.post("https://urlforapi.com/", data).then(
-            function successCallback(response) {
-                console.log("Successfully POST-ed data");
-            },
-            function errorCallback(response) {
-                console.log("POST-ing of data failed");
-            }
-        );
-    };
+    
 });
