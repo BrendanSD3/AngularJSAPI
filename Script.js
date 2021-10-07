@@ -13,7 +13,7 @@ testApp.controller("testController", function($scope, $http) {
     //    Our GET request function
     $scope.getRequest = function() {
         console.log("I've been pressed!");
-        $http.get("https://ergast.com/api/f1/current.json").then(
+        $http.get("http://ergast.com/api/f1/current/next").then(
             function successCallback(result) {
                 $scope.seasonData = result.data;
                 $scope.season = result.data.MRData.RaceTable.season;
