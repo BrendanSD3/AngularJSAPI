@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
-<body ng-controller="testController">
+<body ng-controller="testController" data-ng-init="getRequest()">
     <h2>Recieving Formula 1 data from ergast API</h2>
     {{ home }}
     <button ng-click="getRequest()">Get Next Race  </button>
